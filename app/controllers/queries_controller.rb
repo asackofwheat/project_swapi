@@ -11,7 +11,7 @@ class QueriesController < ApplicationController
   def create
     @query = Query.new(get_params)
     @query.film = Swapi.get_films(@query.name)
-    if Swapi.get_films(@query.name).nil?
+    if @query.film.nil?
       flash.notice = "Looks like that person doesn't exist.."
       redirect_to new_query_path
     else

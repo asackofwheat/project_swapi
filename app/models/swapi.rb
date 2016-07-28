@@ -11,8 +11,9 @@ class Swapi
                   "http://swapi.co/api/films/7/" => "EP7: The Force Awakens"}
 
   def self.get_films(name)
-    return nil if find_stat(name, "films").nil?
-    find_stat(name, "films").map{|url| MOVIE_TITLES[url]}.sort.join(", ")
+    result = find_stat(name, "films")
+    return nil if result.nil?
+    result.map{|url| MOVIE_TITLES[url]}.sort.join(", ")
   end
 
   def self.find_stat(name, stat)
@@ -25,7 +26,7 @@ class Swapi
       end
       page_num += 1
     end
-    result ? result : nil
+    result
   end
 
   def self.fun_fact(name)

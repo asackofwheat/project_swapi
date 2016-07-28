@@ -1,7 +1,8 @@
 class Same
 
   def self.check(name)
-    check = Query.find_by name: name
+    search = name.split(" ").map{|word| word.capitalize}.join(" ")
+    check = Query.find_by name: search
     if check.nil?
       films = Swapi.get_films(name)
     else
