@@ -19,7 +19,7 @@ class Swapi
   def self.find_stat(name, stat)
     result = nil
     page_num = 1
-    until result || page_num == 9
+    until result || page_num == 10
       return_hash = HTTParty.get("http://swapi.co/api/people/?page=#{page_num}")
       return_hash["results"].each do |person|
         result = person[stat] if person["name"].downcase.include?(name.downcase)
