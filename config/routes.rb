@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  root "queries#new"
+
+  resources :queries
+
+  resources :sames, only: [:new, :create, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

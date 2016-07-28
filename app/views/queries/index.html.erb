@@ -1,0 +1,9 @@
+<% @query.each do |query| %>
+  <%= link_to query.name, query %>
+  <br>
+  <%= link_to "Delete", query, method: :delete %> | <%= link_to "Fun Fact!", query, method: :patch %>
+  <br><br>
+<% end %>
+
+<%= session[:fact] %>
+<%= session[:fact] = nil %>

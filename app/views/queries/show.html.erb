@@ -1,0 +1,7 @@
+
+<h2><%= @query.name.upcase %> was in:</h2>
+<ul>
+<% @query.film.split(", ").each do |film| %>
+  <li><%= film %></li>
+<% end %>
+</ul>

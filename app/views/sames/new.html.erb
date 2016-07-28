@@ -1,0 +1,15 @@
+<%= form_tag sames_path, method: :post do %>
+  <div class="field">
+    <%= label_tag :name1 %>
+    <%= text_field_tag :name1 %>
+    <br/>
+  </div>
+  <div class="field">
+    <%= label_tag :name2 %>
+    <%= text_field_tag :name2 %>
+    <br/>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Submit" %>
+  </div>
+<% end %>
